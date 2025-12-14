@@ -1,0 +1,55 @@
+title: "Red Oak Security Services"
+description: "Security services specializing in residential and commercial security solutions."
+
+url: "https://redoaksecurityservices.ca"
+baseurl: ""
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+collections:
+  services:
+    output: true
+    permalink: /services/:name/
+
+include:
+  - pages
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      description: "Security services specializing in residential and commercial security solutions."
+
+  - scope:
+      path: "services"
+      type: "services"
+    values:
+      layout: "service"
+
+  - scope:
+      path: "legal"
+    values:
+      layout: "default"
+
+permalink: /:title/
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - _site
+  - .gitignore
+  - .DS_Store

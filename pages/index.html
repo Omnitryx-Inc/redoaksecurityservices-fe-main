@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Red Oak Security Services | Professional Security Solutions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Red Oak Security Services provides professional security guards, mobile patrol, investigations, and consulting services across Canada." />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+  --primary: #0b1f33;      /* deep navy (authority) */
+  --accent: #8b1e2d;       /* dark oak red */
+  --accent-soft: #f3e6e8;  /* subtle red tint for backgrounds */
+  --text: #1f2937;         /* near-black */
+  --muted: #6b7280;        /* gray */
+  --bg: #f8fafc;           /* light background */
+  --white: #ffffff;
+}
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ====== LAYOUT ====== */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    h1, h2, h3 {
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+      background: var(--white);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links a {
+      margin-left: 2rem;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    /* ====== HERO ====== */
+.hero {
+  background:
+    linear-gradient(
+      rgba(11, 31, 51, 0.7),
+      rgba(11, 31, 51, 0.7)
+    ),
+    url("https://images.unsplash.com/photo-1600599496671-fcc8cb968cc1?q=80&w=1485&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80")
+    65% 65% / cover no-repeat;
+
+  color: var(--white);
+  padding: 7rem 0;
+}
+
+    .hero h1 {
+      color: var(--white);
+      max-width: 750px;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #e5e7eb;
+      font-size: 1.1rem;
+    }
+
+    .hero-buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .btn {
+      padding: 0.9rem 1.8rem;
+      border-radius: 6px;
+      font-weight: 600;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+  background: var(--accent);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: #741926;
+}
+
+    .btn-outline {
+      border: 2px solid #fff;
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      color: var(--primary);
+    }
+
+    /* ====== ABOUT ====== */
+    .about {
+  background: var(--bg);
+  padding: 6rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-text h2 {
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+/* Image panel */
+.about-image {
+  position: relative;
+  height: 420px;
+  border-radius: 14px;
+  background:
+    linear-gradient(
+      rgba(11, 31, 51, 0.25),
+      rgba(11, 31, 51, 0.25)
+    ),
+    url("https://plus.unsplash.com/premium_photo-1682125948844-e2dc8996b0f0?q=80&w=1470&auto=format&fit=crop")
+    center/cover no-repeat;
+
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+.about-image::after {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border: 2px solid rgba(180, 40, 40, 0.35); /* red oak accent */
+  border-radius: 18px;
+  z-index: -1;
+}
+
+    /* ====== SERVICES ====== */
+#services {
+  padding: 5rem 0;
+  background: #ffffff;
+}
+
+#services h2 {
+  margin-bottom: 3rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+}
+
+.service-card {
+  max-width: 420px;
+}
+
+.service-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.service-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #444;
+}
+.service-link {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #b30000; /* accent color */
+  text-decoration: none;
+}
+
+.service-link:hover {
+  text-decoration: underline;
+}
+
+    /* ====== CLIENTS ====== */
+    #clients {
+  padding: 5rem 0;
+  background: #f8f9fa;
+}
+
+.client-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 3rem;
+}
+
+.client-card {
+  max-width: 420px;
+}
+
+.client-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.client-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.client-card h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.client-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+
+    /* ====== CTA ====== */
+    .cta {
+      background:
+        linear-gradient(
+          rgba(11, 31, 51, 0.9),
+          rgba(11, 31, 51, 0.9)
+        ),
+        url("https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta h2 {
+      color: var(--white);
+    }
+
+    .cta p {
+      color: #e5e7eb;
+      max-width: 600px;
+      margin: 1rem auto 2rem;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: #020617;
+      color: #9ca3af;
+      padding: 2.5rem 0;
+    }
+
+    footer .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+    }
+
+    footer h4 {
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    footer p {
+      color: #9ca3af;
+    }
+
+    footer .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 2.3rem;
+      }
+    }
+
+    @media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    height: 300px;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="container nav">
+    <div class="logo">Red Oak <span>Security</span></div>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>Professional Security Services Built on Trust & Experience</h1>
+    <p>
+      Red Oak Security Services delivers reliable security guard services,
+      mobile patrol, investigations, and consulting for businesses,
+      events, and critical infrastructure across Canada.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Request a Quote</a>
+      <a href="#services" class="btn btn-outline">Our Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="container about-grid">
+    
+    <div class="about-text">
+      <h2>About Red Oak Security Services</h2>
+      <p>
+        Red Oak Security Services is a Canadian security firm with years of
+        experience providing dependable protection and risk management solutions.
+      </p>
+      <p>
+        Our licensed professionals are trained to operate with discretion,
+        professionalism, and precision—ensuring safety without compromise.
+      </p>
+    </div>
+
+    <div class="about-image"></div>
+
+  </div>
+</section>
+
+<section id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+
+    <div class="services-grid">
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1603575448364-4f11c93f4a95?auto=format&fit=crop&w=900&q=80" alt="Security Guard Services">
+        </div>
+        <h3>Security Guards</h3>
+        <p>Licensed, uniformed guards providing on-site protection, access control, and deterrence.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1611095785354-79a1c9c3e6a3?auto=format&fit=crop&w=900&q=80" alt="Mobile Patrol Security">
+        </div>
+        <h3>Mobile Patrol</h3>
+        <p>Marked patrol vehicles conducting scheduled and randomized property inspections.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1601582589907-f92af5ed9db8?auto=format&fit=crop&w=900&q=80" alt="Private Investigations">
+        </div>
+        <h3>Investigations</h3>
+        <p>Professional investigations, surveillance, evidence collection, and reporting.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Security Consulting">
+        </div>
+        <h3>Security Consulting</h3>
+        <p>Risk assessments, security planning, and operational consulting for organizations.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=900&q=80" alt="Cyber Security">
+        </div>
+        <h3>Cyber Security</h3>
+        <p>Threat analysis, digital risk advisory, and cyber security consulting services.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="service-image">
+          <img src="https://images.unsplash.com/photo-1590650153855-d9e808231d41?auto=format&fit=crop&w=900&q=80" alt="Parking & Traffic Control">
+        </div>
+        <h3>Parking Solutions</h3>
+        <p>Parking enforcement, access management, and traffic control solutions.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- WHO WE SERVE -->
+<section id="clients">
+  <div class="container">
+    <h2>Who We Serve</h2>
+
+    <div class="client-grid">
+
+      <article class="client-card">
+        <div class="client-image">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80" alt="Corporate & Commercial Security">
+        </div>
+        <h3>Corporate & Commercial Properties</h3>
+        <p>
+          Security solutions for office towers, business parks, and commercial facilities—focused on access control, asset protection, and incident response.
+        </p>
+      </article>
+
+      <article class="client-card">
+        <div class="client-image">
+          <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=900&q=80" alt="Construction Site Security">
+        </div>
+        <h3>Construction Sites</h3>
+        <p>
+          Day and night protection for active construction sites, including theft prevention, site patrols, and safety enforcement.
+        </p>
+      </article>
+
+      <article class="client-card">
+        <div class="client-image">
+          <img src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?auto=format&fit=crop&w=900&q=80" alt="Airport Security Services">
+        </div>
+        <h3>Airports & Transportation Hubs</h3>
+        <p>
+          Security support for high-traffic transportation environments requiring strict compliance, situational awareness, and rapid response.
+        </p>
+      </article>
+
+      <article class="client-card">
+        <div class="client-image">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=900&q=80" alt="Campus Security">
+        </div>
+        <h3>Campuses & Educational Institutions</h3>
+        <p>
+          Visible security presence for colleges, universities, and private institutions, balancing safety, accessibility, and community trust.
+        </p>
+      </article>
+
+      <article class="client-card">
+        <div class="client-image">
+          <img src="https://images.unsplash.com/photo-1520975682031-a7fdd8fa9a35?auto=format&fit=crop&w=900&q=80" alt="Event Security Services">
+        </div>
+        <h3>Weddings & Private Events</h3>
+        <p>
+          Discreet and professional event security, including crowd control, access management, and guest safety for private functions.
+        </p>
+      </article>
+
+      <article class="client-card">
+        <div class="client-image">
+          <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=900&q=80" alt="Residential & Parking Security">
+        </div>
+        <h3>Residential & Parking Facilities</h3>
+        <p>
+          On-site and patrol-based security services for condominiums, residential communities, and parking facilities.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+  <div class="container">
+    <h2>Secure Your Property With Confidence</h2>
+    <p>
+      Contact Red Oak Security Services today to discuss your security needs
+      and receive a customized quote.
+    </p>
+    <a href="mailto:info@redoaksecurityservices.ca" class="btn btn-primary">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>Red Oak Security Services</h4>
+      <p>Professional security solutions across Canada.</p>
+    </div>
+
+    <div>
+      <h4>Services</h4>
+      <p>Security Guards<br>Mobile Patrol<br>Investigations</p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>Email: info@redoaksecurityservices.ca</p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2025 Red Oak Security Services. All rights reserved.
+  </div>
+</footer>
+
+</body>
+</html>
