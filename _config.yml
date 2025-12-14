@@ -1,5 +1,5 @@
 title: "Red Oak Security Services"
-description: "Security services specializing in residential and commercial security solutions."
+description: "Red Oak Security Services provides professional security guards, mobile patrol, investigations, and consulting services across Canada."
 
 url: "https://redoaksecurityservices.ca"
 baseurl: ""
@@ -26,7 +26,7 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-      description: "Security services specializing in residential and commercial security solutions."
+      description: "Red Oak Security Services provides professional security guards, mobile patrol, investigations, and consulting services across Canada."
 
   - scope:
       path: "services"
