@@ -1,0 +1,105 @@
+---
+layout: default
+title: "Support - Red Oak Security Services"
+description: "Get technical support or assistance with existing services from Red Oak Security Services."
+permalink: /support/
+---
+<section id="support" class="contact-page container">
+	<div class="contact-header">
+		<h1>Support & Assistance</h1>
+		<p>
+			Need help with an existing service or have a technical concern?
+			Our support team is here to assist you.
+		</p>
+	</div>
+
+	<form class="contact-form" method="POST" action="https://formspree.io/f/xlgdjvvr">
+		<!-- Name -->
+		<div class="form-row">
+			<div class="form-group">
+				<label>First Name *</label>
+				<input type="text" name="first_name" required>
+			</div>
+			<div class="form-group">
+				<label>Last Name *</label>
+				<input type="text" name="last_name" required>
+			</div>
+		</div>
+
+		<!-- Contact -->
+		<div class="form-row">
+			<div class="form-group">
+				<label>Email Address *</label>
+				<input type="email" name="email" required>
+			</div>
+			<div class="form-group">
+				<label>Phone Number</label>
+				<input type="tel" name="phone">
+			</div>
+		</div>
+
+		<!-- Company -->
+		<div class="form-group">
+			<label>Company Name</label>
+			<input type="text" name="company">
+		</div>
+
+		<!-- Support Type -->
+		<div class="form-group">
+			<label>Support Category *</label>
+			<select name="support_type" required>
+				<option value="">Select a category</option>
+				<option value="General Inquiry">General Inquiry</option>
+				<option value="Technical Issue">Technical Issue</option>
+				<option value="Billing & Invoicing">Billing & Invoicing</option>
+				<option value="Security Incident">Security Incident</option>
+				<option value="Account / Contract Support">Account / Contract Support</option>
+				<option value="Other">Other</option>
+			</select>
+		</div>
+
+		<!-- Service Area -->
+		<div class="form-group">
+			<label>Service Area (if applicable)</label>
+			<select name="service_area">
+				<option value="">Select service</option>
+				<option>Security Guards</option>
+				<option>Mobile Patrol</option>
+				<option>Investigations</option>
+				<option>Security Consulting</option>
+				<option>Cyber Security</option>
+				<option>Parking Solutions</option>
+			</select>
+		</div>
+
+		<!-- Message -->
+		<div class="form-group">
+			<label>Describe Your Issue *</label>
+			<textarea name="message" rows="5" required></textarea>
+		</div>
+
+		<!-- Urgency -->
+		<div class="form-group">
+			<label>Urgency Level *</label>
+			<select name="urgency" required>
+				<option value="">Select urgency</option>
+				<option>Low - General question</option>
+				<option>Medium - Needs attention soon</option>
+				<option>High - Immediate assistance required</option>
+			</select>
+		</div>
+
+		<!-- Consent -->
+		<div class="form-checkbox">
+			<input type="checkbox" id="consent" required>
+			<label for="consent">
+				I acknowledge and consent to the processing of my personal data in accordance with the
+				<a href="/legal/privacy-policy/">Privacy Policy</a>.
+			</label>
+		</div>
+
+		<button type="submit" class="btn btn-primary">
+			Submit Support Request
+		</button>
+	</form>
+</section>

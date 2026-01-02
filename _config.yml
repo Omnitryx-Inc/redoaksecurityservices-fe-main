@@ -3,6 +3,7 @@ description: "Red Oak Security Services provides professional security guards, m
 
 url: "https://redoaksecurityservices.ca"
 baseurl: ""
+logo: "/assets/images/logo.png"
 
 markdown: kramdown
 
