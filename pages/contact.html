@@ -4,6 +4,7 @@ title: "Contact Us - Red Oak Security Services"
 description: "Get in touch with Red Oak Security Services for inquiries about our residential and commercial security solutions."
 permalink: /contact/
 ---
+<main>
 <section id="contact" class="contact-page container">
 	<div class="contact-header">
 		<h1>Talk to an Expert</h1>
@@ -12,7 +13,9 @@ permalink: /contact/
 			specialist will respond promptly.
 		</p>
 	</div>
-	<form class="contact-form" method="POST" action="https://formspree.io/f/xlgdjvvr">
+	<form class="contact-form" method="POST" action="https://4ruolwraw4.execute-api.us-east-1.amazonaws.com/prod/contact">
+		<input type="hidden" name="client" value="redoak">
+  		<input type="hidden" name="form_type" value="contact">
 		<!-- Name -->
 		<div class="form-row">
 			<div class="form-group">
@@ -31,8 +34,8 @@ permalink: /contact/
 				<input type="email" name="email" required>
 			</div>
 			<div class="form-group">
-				<label>Phone Number</label>
-				<input type="tel" name="phone">
+				<label>Phone Number *</label>
+				<input type="tel" name="phone" required>
 			</div>
 		</div>
 		<!-- Company -->
@@ -51,8 +54,8 @@ permalink: /contact/
 				<input type="text" name="province" required>
 			</div>
 			<div class="form-group">
-				<label>City</label>
-				<input type="text" name="city">
+				<label>City *</label>
+				<input type="text" name="city" required>
 			</div>
 		</div>
 		<!-- Inquiry -->
@@ -89,21 +92,56 @@ permalink: /contact/
 		</div>
 		<!-- Consent -->
 		<div class="form-checkbox">
-			<input type="checkbox" id="newsletter">
-			<label for="newsletter">
+		<input type="hidden" name="newsletter" value="no">
+		<input type="checkbox" id="newsletter" name="newsletter" value="yes">
+		<label for="newsletter">
 			I would like to receive updates and newsletters from Red Oak Security Services.
-			</label>
+		</label>
 		</div>
+
 		<div class="form-checkbox">
-			<input type="checkbox" id="consent" required>
-			<label for="consent">
+		<input type="checkbox" id="consent" name="consent" value="yes" required>
+		<label for="consent">
 			I acknowledge and consent to the processing of my personal data.
 			To learn more, review our
 			<a href="/legal/privacy-policy/">Privacy Policy</a>.
-			</label>
+		</label>
 		</div>
 		<button type="submit" class="btn btn-primary">
 		Submit Request
 		</button>
 	</form>
+
+	<div id="form-success" class="form-success-message" style="display:none;">
+		Your request has been received and our team will contact you shortly.
+	</div>
+
 </section>
+</main>
+
+<script>
+document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault(); // stop default form submission
+
+  const formData = Object.fromEntries(new FormData(this).entries());
+
+  try {
+    const response = await fetch(this.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      this.style.display = 'none'; // hide the form
+      document.getElementById('form-success').style.display = 'block'; // show success message
+    } else {
+      alert('Error: ' + result.error); // only show error
+    }
+  } catch (err) {
+    alert('Submission failed. Please try again later.');
+  }
+});
+</script>

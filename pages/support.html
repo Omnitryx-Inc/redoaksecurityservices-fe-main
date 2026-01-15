@@ -13,7 +13,9 @@ permalink: /support/
 		</p>
 	</div>
 
-	<form class="contact-form" method="POST" action="https://formspree.io/f/xlgdjvvr">
+	<form class="contact-form" method="POST" action="https://4ruolwraw4.execute-api.us-east-1.amazonaws.com/prod/contact">
+		<input type="hidden" name="client" value="redoak">
+  		<input type="hidden" name="form_type" value="support">
 		<!-- Name -->
 		<div class="form-row">
 			<div class="form-group">
@@ -33,8 +35,8 @@ permalink: /support/
 				<input type="email" name="email" required>
 			</div>
 			<div class="form-group">
-				<label>Phone Number</label>
-				<input type="tel" name="phone">
+				<label>Phone Number *</label>
+				<input type="tel" name="phone" required>
 			</div>
 		</div>
 
@@ -65,7 +67,7 @@ permalink: /support/
 				<option value="">Select service</option>
 				<option>Security Guards</option>
 				<option>Mobile Patrol</option>
-				<!-- <option>Investigations</option> -->
+				<option>Event Security</option>
 				<option>Security Consulting</option>
 				<option>Cyber Security</option>
 				<option>Parking Solutions</option>
@@ -91,15 +93,47 @@ permalink: /support/
 
 		<!-- Consent -->
 		<div class="form-checkbox">
-			<input type="checkbox" id="consent" required>
-			<label for="consent">
-				I acknowledge and consent to the processing of my personal data in accordance with the
-				<a href="/legal/privacy-policy/">Privacy Policy</a>.
-			</label>
+		<input type="checkbox" id="consent" name="consent" value="yes" required>
+		<label for="consent">
+			I acknowledge and consent to the processing of my personal data.
+			To learn more, review our
+			<a href="/legal/privacy-policy/">Privacy Policy</a>.
+		</label>
 		</div>
 
 		<button type="submit" class="btn btn-primary">
 			Submit Support Request
 		</button>
 	</form>
+
+	<div id="form-success" class="form-success-message" style="display:none;">
+		Your support request has been received. Our team will contact you shortly.
+	</div>
 </section>
+
+<script>
+document.querySelector('.contact-form').addEventListener('submit', async function(e) {
+  e.preventDefault(); // stop default form submission
+
+  const formData = Object.fromEntries(new FormData(this).entries());
+
+  try {
+    const response = await fetch(this.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      this.style.display = 'none'; // hide the form
+      document.getElementById('form-success').style.display = 'block'; // show success message
+    } else {
+      alert('Error: ' + result.error); // only show error
+    }
+  } catch (err) {
+    alert('Submission failed. Please try again later.');
+  }
+});
+</script>
