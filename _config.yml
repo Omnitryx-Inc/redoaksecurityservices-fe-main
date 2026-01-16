@@ -13,11 +13,6 @@ plugins:
   - jekyll-sitemap
   - jekyll-redirect-from
 
-collections:
-  services:
-    output: true
-    permalink: /services/:name/
-
 include:
   - pages
 
@@ -28,12 +23,6 @@ defaults:
     values:
       layout: "default"
       description: "Red Oak Security Services provides professional security guards, mobile patrol, investigations, and consulting services across Canada."
-
-  - scope:
-      path: "services"
-      type: "services"
-    values:
-      layout: "service"
 
   - scope:
       path: "legal"
