@@ -524,6 +524,22 @@ footer .copyright {
 	box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
 }
 
+.contact-phone {
+	margin-top: 1rem;
+	font-weight: 500;
+	color: var(--primary);
+}
+
+.contact-phone a {
+	color: var(--accent);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.contact-phone a:hover {
+	text-decoration: underline;
+}
+
 .form-row {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
