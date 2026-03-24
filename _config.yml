@@ -1,3 +1,6 @@
+# Set to true once payment is received to restore the site
+site_active: false
+
 title: "Red Oak Security Services"
 description: "Red Oak Security Services provides professional security guards, mobile patrol, investigations, and consulting services across Canada."
 
